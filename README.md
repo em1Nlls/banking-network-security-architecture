@@ -1,4 +1,4 @@
-# Banking Network & Security Architecture
+# 🏦 Banking Network & Security Architecture
 
 **BANKLAB | Enterprise Banking Infrastructure Engineering Project**
 
@@ -6,7 +6,9 @@ An independent, hands-on engineering project focused on designing, implementing,
 
 The project combines enterprise network architecture, cybersecurity, virtualization, identity and access management, security operations, application infrastructure, and operational resilience.
 
-## Project Disclaimer & Educational Purpose
+---
+
+## 📜 Project Disclaimer & Educational Purpose
 
 **BANKLAB is an independent, fictional, and non-production banking infrastructure laboratory developed exclusively for educational, technical research, and professional development purposes.**
 
@@ -19,7 +21,9 @@ The project combines enterprise network architecture, cybersecurity, virtualizat
 
 **All implementations and security tests are conducted within an isolated, authorized laboratory environment.**
 
-## Project Objectives
+---
+
+## 🎯 Project Objectives
 
 - Design a multi-site banking network based on documented business and technical requirements.
 - Develop a Cisco-based switching and routing infrastructure.
@@ -29,25 +33,29 @@ The project combines enterprise network architecture, cybersecurity, virtualizat
 - Apply relevant Turkish banking regulations and internationally recognized engineering guidance.
 - Validate implementations through repeatable tests and technical documentation.
 
-## Planned Technology Stack
+---
+
+## 🛠️ Planned Technology Stack
 
 | Domain | Technologies |
 |---|---|
-| Networking | Cisco IOS / IOS XE |
-| Network Security | Fortinet FortiGate |
-| Virtualization | VMware ESXi |
-| Identity & Directory | Active Directory, DNS, PKI |
-| Network Access Control | PacketFence |
-| Privileged Access Management | JumpServer |
-| IAM / SSO | Keycloak |
-| Security Monitoring | Wazuh, Splunk, Suricata, Zeek |
-| Infrastructure Monitoring | Zabbix, Grafana |
-| Application Infrastructure | Linux, PostgreSQL, Containers, Kubernetes |
-| Automation | Python, Ansible, Git |
+| 🌐 Networking | Cisco IOS / IOS XE |
+| 🛡️ Network Security | Fortinet FortiGate |
+| 🖥️ Virtualization | VMware ESXi |
+| 🔑 Identity & Directory | Active Directory, DNS, PKI |
+| 🔐 Network Access Control | PacketFence |
+| 🗝️ Privileged Access Management | JumpServer |
+| 👤 IAM / SSO | Keycloak |
+| 🔍 Security Monitoring | Wazuh, Splunk, Suricata, Zeek |
+| 📊 Infrastructure Monitoring | Zabbix, Grafana |
+| ⚙️ Application Infrastructure | Linux, PostgreSQL, Containers, Kubernetes |
+| 🤖 Automation | Python, Ansible, Git |
 
-Technologies listed above are planned components, not completed implementations. Deployment depends on hardware capacity, licensing, and design requirements.
+> **Note:** Technologies listed above are planned components, not completed implementations. Deployment depends on hardware capacity, licensing, and design requirements.
 
-## Architecture & Documentation
+---
+
+## 📐 Architecture & Documentation
 
 The project will maintain:
 
@@ -60,7 +68,9 @@ The project will maintain:
 - Validation & Acceptance Test Reports
 - As-Built Documentation
 
-## Reference Frameworks
+---
+
+## 📚 Reference Frameworks
 
 - Turkish Banking Regulation and Supervision Agency (BDDK) regulations
 - Turkish Personal Data Protection Law (KVKK)
@@ -70,16 +80,15 @@ The project will maintain:
 
 Each reference will be assessed for applicability; this laboratory does not claim regulatory compliance or certification.
 
-## Current Status
+---
 
-**Phase 01 — Project Requirements & Reference Architecture**
 
-Status: Planning
-
-No production-equivalent implementation or technical validation is claimed at this stage.
-
-## Disclaimer
-
-BANKLAB represents a fictional banking organization. It is an independent educational and research project and is not affiliated with any bank, regulator, or technology vendor.
+### ⚖️ Licensing & Legal Notice
 
 All infrastructure, accounts, applications, and test data are simulated. Any vendor software will be used in accordance with its applicable licensing terms.
+
+This project does not claim affiliation with, endorsement by, or certification from any referenced organization.
+
+---
+
+**BANKLAB — Design. Implement. Secure. Validate. Document.**
