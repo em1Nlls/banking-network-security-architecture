@@ -6,6 +6,19 @@ An independent, hands-on engineering project focused on designing, implementing,
 
 The project combines enterprise network architecture, cybersecurity, virtualization, identity and access management, security operations, application infrastructure, and operational resilience.
 
+## Project Disclaimer & Educational Purpose
+
+**BANKLAB is an independent, fictional, and non-production banking infrastructure laboratory developed exclusively for educational, technical research, and professional development purposes.**
+
+- This project does not represent, reproduce, or disclose the actual network architecture, security infrastructure, configurations, or internal systems of any real banking institution.
+- All network topologies, IP addressing schemes, infrastructure configurations, identities, applications, and transaction datasets are independently designed or synthetically generated for laboratory use.
+- The architecture is informed by publicly available vendor reference designs, official Turkish regulatory publications, and recognized industry standards.
+- References to BDDK, KVKK, PCI DSS, NIST, or other frameworks are provided for educational analysis and engineering guidance. They do not imply regulatory approval, certification, or verified compliance.
+- BANKLAB is not affiliated with, endorsed by, or sponsored by any bank, regulatory authority, or technology vendor.
+- No confidential banking information, customer data, proprietary infrastructure documentation, or unauthorized third-party configurations will be published.
+
+**All implementations and security tests are conducted within an isolated, authorized laboratory environment.**
+
 ## Project Objectives
 
 - Design a multi-site banking network based on documented business and technical requirements.
