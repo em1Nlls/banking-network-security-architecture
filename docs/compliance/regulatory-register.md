@@ -2,46 +2,56 @@
 
 **Project:** Banking Network & Security Architecture  
 **Document ID:** BANKLAB-GRC-001  
-**Version:** 0.1  
-**Status:** Draft — Initial Regulatory Identification  
-**Last Reviewed:** 2026-10-26  
-**Jurisdiction:** Republic of Türkiye
+**Version:** 0.2  
+**Status:** Draft — Regulatory Identification & Applicability Review  
+**Document Date:** 2026-10-26  
+**Jurisdiction:** Republic of Türkiye  
+**Regulatory Compliance Status:** Not Assessed
 
 ---
 
 ## 1. Purpose
 
-This document identifies the regulatory instruments, security standards, and technical guidance relevant to the BANKLAB project.
+This register identifies the legal instruments, regulatory requirements, industry standards, and technical references considered during the design of the BANKLAB banking infrastructure laboratory.
 
-BANKLAB is a simulated banking infrastructure engineering project designed around publicly available Turkish banking regulations and recognized security architecture practices.
+Its objectives are to:
 
-The register serves as the foundation for:
+- Maintain an identifiable register of relevant regulatory sources.
+- Distinguish binding legal requirements from conditional standards and non-binding technical guidance.
+- Evaluate the applicability of each source to the simulated architecture.
+- Support regulatory requirements traceability.
+- Establish links between identified requirements, engineering controls, architecture artifacts, and validation evidence.
+- Document unresolved regulatory questions and applicability limitations.
 
-- Regulatory requirements identification
-- Security architecture design
-- Technical control selection
-- Risk assessment
-- Requirements traceability
-- Implementation validation
-- Compliance gap analysis
+**The presence of a source in this register does not establish regulatory compliance.**
 
-**Important:** Inclusion of a regulation or standard in this register does not establish compliance or confirm that every requirement applies to the simulated environment.
+## 2. Regulatory Classification
 
-## 2. Turkish Regulatory Framework
+BANKLAB classifies its references into three categories.
 
-| ID | Regulation / Legal Source | Authority | Relevance | Status |
+| Classification | Description |
+|---|---|
+| Legal / Regulatory | Turkish laws, regulations, and regulatory instruments potentially applicable to banking operations |
+| Conditional / Contractual | Standards or frameworks whose applicability depends on specific services, contractual obligations, or defined scope |
+| Technical Reference | Non-binding architecture, cybersecurity, and engineering guidance used to support design decisions |
+
+A technical implementation may demonstrate a selected security control without establishing compliance with the complete regulatory instrument.
+
+## 3. Turkish Banking Regulatory Register
+
+| ID | Official Instrument | Authority | Intended Review Scope | Assessment Status |
 |---|---|---|---|---|
-| REG-001 | Regulation on Information Systems and Electronic Banking Services of Banks | BDDK | Information systems governance, network security, access control and operational security | Under Review |
-| REG-002 | Regulation on Independent Audit of Information Systems and Business Processes | BDDK | Audit processes, control verification and evidence management | Under Review |
-| REG-003 | Circular on Penetration Testing of Information Systems | BDDK | Security testing, assessment and reporting | Under Review |
-| REG-004 | Personal Data Protection Law No. 6698 | KVKK | Personal data security, confidentiality and accountability | Under Review |
-| REG-005 | Banking Law No. 5411 | Turkish Banking Legislation | Banking confidentiality and legal obligations | Under Review |
+| REG-001 | Bankaların Bilgi Sistemleri ve Elektronik Bankacılık Hizmetleri Hakkında Yönetmelik | BDDK | Information systems management, security, access controls, network protection, and operational requirements | Under Review |
+| REG-002 | Bilgi Sistemleri ve İş Süreçleri Bağımsız Denetimi Hakkında Yönetmelik | BDDK | Independent audit requirements and control assessment | Under Review |
+| REG-003 | Bilgi Sistemlerine İlişkin Sızma Testleri Hakkında Genelge | BDDK | Security assessment and penetration testing requirements | Under Review |
+| REG-004 | 6698 Sayılı Kişisel Verilerin Korunması Kanunu | Turkish Legislature / KVKK supervisory authority | Personal data processing and security obligations | Under Review |
+| REG-005 | 5411 Sayılı Bankacılık Kanunu | Turkish Legislature / BDDK supervisory authority | Banking-sector legal framework, confidentiality, and related obligations | Under Review |
 
-### 2.1 Official Regulatory Sources
+### 3.1 Official Source Register
 
 **REG-001, REG-002, REG-003 — BDDK**
 
-Banking Regulation and Supervision Agency:
+Official regulatory catalogue:
 
 https://www.bddk.gov.tr/Mevzuat/Liste/134
 
@@ -51,113 +61,204 @@ Personal Data Protection Authority:
 
 https://www.kvkk.gov.tr/
 
-**REG-005 — Banking Law**
-
-Official legislation portal:
+Official legislation:
 
 https://www.mevzuat.gov.tr/
 
-Before detailed control mapping, the latest consolidated texts, amendments, applicable provisions and effective dates must be checked.
+**REG-005 — Banking Law**
 
-## 3. Preliminary Security Control Domains
+Official legislation:
 
-The following domains will be investigated against the applicable regulatory provisions.
+https://www.mevzuat.gov.tr/
 
-| Control Domain | Architectural Considerations | Candidate Technologies |
-|---|---|---|
-| Network Security | Segmentation, security boundaries, traffic filtering | Cisco, FortiGate |
-| Identity & Access | Authentication, authorization, privileged access | Active Directory, Keycloak, JumpServer |
-| Network Access Control | Device authentication, authorized network access | PacketFence, RADIUS, PKI |
-| Security Logging | Event collection, integrity, access control, monitoring | Wazuh, Splunk |
-| Vulnerability Management | Vulnerability assessment and remediation tracking | Greenbone, patch management |
-| Data Protection | Data classification, restricted access, encryption | TLS, database controls, PKI |
-| Infrastructure Security | Secure configurations and controlled administration | ESXi, Ansible, configuration baselines |
-| Business Continuity | Backup, recovery and availability requirements | Backup systems, redundancy |
-| Application Security | API protection, service authentication, secure development | API Gateway, Keycloak, mTLS |
+### 3.2 Source Verification Rules
 
-These are proposed engineering control domains, not a claim that the listed technologies individually satisfy any regulatory obligation.
+Before a specific provision is included in the detailed control matrix, the following information must be recorded:
 
-## 4. International Standards & Reference Frameworks
+- Official title
+- Issuing authority
+- Publication date
+- Official Gazette reference, where applicable
+- Effective date
+- Applicable amendments
+- Consolidated text or verified official source
+- Relevant article, paragraph, or clause
+- Applicability rationale
+- Date of verification
 
-| ID | Standard / Framework | Organization | Intended Use | Applicability |
+The official source catalogue has been identified, but a complete article-level and amendment-level legal review has not yet been performed.
+
+## 4. Initial Regulatory Control Domains
+
+The following domains have been identified for detailed review.
+
+| Domain ID | Control Domain | Engineering Focus | Candidate Components |
+|---|---|---|---|
+| NET | Network Security | Segmentation, controlled communication, perimeter and internal traffic protection | Cisco, FortiGate |
+| IAM | Identity & Access Management | Authentication, authorization, privileged identities | Active Directory, Keycloak |
+| NAC | Network Access Control | Endpoint admission, device authentication, policy enforcement | PacketFence, RADIUS, PKI |
+| PAM | Privileged Access | Controlled administration and privileged session accountability | JumpServer |
+| LOG | Security Logging | Event collection, protection, retention assessment, security analysis | Wazuh, Splunk |
+| SYS | Infrastructure Security | Secure configurations, administrative access, platform protection | ESXi, Linux, Ansible |
+| APP | Application Security | Authentication, API security, service authorization | API Gateway, Keycloak |
+| DAT | Data Protection | Data classification, restricted access, encryption | TLS, PKI, database controls |
+| VUL | Vulnerability Management | Assessment, prioritization, remediation, patching | Greenbone, patch workflows |
+| BCM | Business Continuity | Backup, recovery, availability, restoration | Backup and redundancy solutions |
+| AUD | Audit & Evidence | Traceability, control evidence, validation records | Git, documentation, test reports |
+
+These domains are preliminary engineering classifications, not direct quotations of legal requirements.
+
+## 5. International Standards & Technical References
+
+| ID | Reference | Organization | Classification | Applicability |
 |---|---|---|---|---|
-| STD-001 | PCI DSS | PCI SSC | Payment card data environment security | Conditional |
-| STD-002 | ISO/IEC 27001 | ISO/IEC | Information security management practices | Reference |
-| STD-003 | ISO/IEC 27002 | ISO/IEC | Information security control guidance | Reference |
-| STD-004 | NIST SP 800-207 | NIST | Zero Trust Architecture | Reference |
-| STD-005 | NIST Cybersecurity Framework 2.0 | NIST | Cybersecurity risk management | Reference |
-| STD-006 | SWIFT Customer Security Controls Framework | SWIFT | Financial messaging security controls | Conditional |
+| STD-001 | PCI DSS v4.0.1 | PCI SSC | Conditional / Contractual | Subject to payment card environment scope |
+| STD-002 | ISO/IEC 27001 | ISO/IEC | Technical / Management Reference | Reference |
+| STD-003 | ISO/IEC 27002 | ISO/IEC | Technical Reference | Reference |
+| STD-004 | NIST SP 800-207 — Zero Trust Architecture | NIST | Technical Reference | Reference |
+| STD-005 | NIST Cybersecurity Framework 2.0 | NIST | Risk Management Reference | Reference |
+| STD-006 | SWIFT Customer Security Controls Framework | SWIFT | Conditional / Contractual | Subject to financial messaging scope |
+| STD-007 | Cisco Validated Designs | Cisco | Vendor Architecture Reference | Reference |
+| STD-008 | Official Fortinet Security Documentation | Fortinet | Vendor Technical Reference | Reference |
 
-### 4.1 Reference Links
+### 5.1 Official Reference Sources
 
-- PCI Security Standards Council: https://www.pcisecuritystandards.org/
-- ISO: https://www.iso.org/
-- NIST SP 800-207: https://csrc.nist.gov/pubs/sp/800/207/final
-- NIST Cybersecurity Framework: https://www.nist.gov/cyberframework
-- SWIFT Customer Security Programme: https://www.swift.com/myswift/customer-security-programme
+**PCI Security Standards Council**
 
-PCI DSS applicability depends on the defined cardholder data environment and related scope.
+https://www.pcisecuritystandards.org/
 
-SWIFT security controls will be assessed only if financial messaging infrastructure is included in BANKLAB.
+**ISO**
 
-International technical guidance must not be misrepresented as automatically binding Turkish banking legislation.
+https://www.iso.org/
 
-## 5. Requirements Traceability Method
+**NIST SP 800-207**
 
-Each selected regulatory requirement will eventually be connected to a technical control, an architecture artifact and a validation result.
+https://csrc.nist.gov/pubs/sp/800/207/final
 
-Example:
+**NIST Cybersecurity Framework**
 
-| Requirement ID | Source | Proposed Control | Design Artifact | Validation | Status |
+https://www.nist.gov/cyberframework
+
+**SWIFT Customer Security Programme**
+
+https://www.swift.com/myswift/customer-security-programme
+
+**Cisco Validated Designs**
+
+https://www.cisco.com/
+
+**Fortinet Documentation Library**
+
+https://docs.fortinet.com/
+
+### 5.2 Applicability Notes
+
+- PCI DSS requirements will be considered only within an explicitly defined payment card data environment and associated scope.
+- SWIFT security controls will be evaluated if a simulated financial messaging environment is formally included.
+- ISO and NIST guidance will support engineering decisions but will not be represented as automatically binding Turkish banking legislation.
+- Vendor reference architectures provide design guidance but do not establish legal compliance.
+- Standard versions and applicable requirements must be verified before detailed control mapping.
+
+## 6. Preliminary Requirements Traceability
+
+The following examples demonstrate how identified obligations and engineering requirements may be connected to architecture controls.
+
+| Requirement ID | Source Reference | Proposed Control | Architecture Evidence | Validation Objective | Status |
 |---|---|---|---|---|---|
-| REQ-NET-001 | REG-001 — Provision to be verified | Segmented banking networks | HLD / Security Zone Matrix | Inter-segment access tests | Proposed |
-| REQ-IAM-001 | REG-001 — Provision to be verified | Role-based access control | IAM Design | Authorization tests | Proposed |
-| REQ-LOG-001 | REG-001 — Provision to be verified | Centralized security logging | Logging Architecture | Event ingestion tests | Proposed |
-| REQ-DATA-001 | REG-004 — Article 12 | Protection against unauthorized personal data access | Data Security Design | Access control tests | Proposed |
+| REQ-NET-001 | REG-001 — Exact provision pending review | Restricted inter-zone network access | HLD, LLD, Security Policy Matrix | Unauthorized flows are denied | Proposed |
+| REQ-IAM-001 | REG-001 — Exact provision pending review | Centralized access control | Identity Architecture | Approved and rejected access tests | Proposed |
+| REQ-NAC-001 | REG-001 — Exact provision pending review | Managed endpoint network admission | NAC Design | Unauthorized endpoint admission is rejected | Proposed |
+| REQ-PAM-001 | REG-001 — Exact provision pending review | Controlled privileged administration | PAM Architecture | Administrative access and audit tests | Proposed |
+| REQ-LOG-001 | REG-001 — Exact provision pending review | Protected centralized security event collection | Logging Architecture | Selected events are received and verified | Proposed |
+| REQ-DAT-001 | REG-004 — Article 12 | Protection against unauthorized personal data access | Data Security Architecture | Restricted access is validated | Proposed |
+| REQ-BCM-001 | Regulatory applicability pending review | Documented recovery controls | Backup & Recovery Design | Selected recovery tests succeed | Proposed |
 
-Example mappings are preliminary. Exact source clauses and the extent of each obligation must be verified before approval.
+**Important:** These are provisional engineering interpretations and test objectives. They are not verbatim regulatory requirements or confirmed evidence of compliance.
 
-## 6. Control Implementation Status
+## 7. Regulatory-to-Architecture Workflow
 
-The following status values will be used:
+Each selected requirement will follow this process:
 
-- **Identified:** Relevant source or requirement has been recorded.
-- **Under Review:** Legal applicability or technical interpretation is being assessed.
-- **Planned:** Implementation has been designed but not deployed.
-- **Implemented:** Technical configuration has been completed.
-- **Validated:** Defined technical tests have been performed successfully.
-- **Gap Identified:** A requirement or control remains unsatisfied.
-- **Not Applicable:** Exclusion has been documented with justification.
+**Source Identification → Applicability Assessment → Requirement Definition → Architecture Decision → Technical Implementation → Validation → Evidence Review**
 
-A validated laboratory control does not automatically constitute regulatory compliance.
+### Example
 
-## 7. Review & Maintenance
+**Business Requirement:** Authorized branch workstations require controlled access to centralized banking services.
 
-This register will be reviewed when:
+**Potential Regulatory Context:** Information systems and network security requirements identified through the applicable BDDK framework.
 
-- Applicable laws or regulatory requirements change.
-- New banking services or infrastructure components enter the project scope.
-- Architecture decisions introduce new regulatory considerations.
-- Security controls are added, modified or removed.
-- Technical validation identifies control gaps.
+**Engineering Control:** Segmented branch network with restricted access to approved application endpoints.
 
-Each significant update should be recorded in Git version history with supporting references.
+**Candidate Technologies:** Cisco switching and routing, FortiGate policy enforcement, centralized identity services.
 
-## 8. Next Deliverables
+**Verification:** Approved traffic succeeds; unauthorized direct access to protected services is denied.
+
+**Evidence:** Network diagrams, sanitized configurations, firewall logs, and test results.
+
+This example represents a proposed technical control, not an independently certified compliance outcome.
+
+## 8. Assessment and Implementation Status
+
+BANKLAB will use the following values:
+
+| Status | Definition |
+|---|---|
+| Identified | Source or requirement recorded |
+| Under Review | Applicability or interpretation not finalized |
+| Not Applicable | Exclusion documented with rationale |
+| Planned | Technical design prepared but not deployed |
+| Implemented | Configuration deployed |
+| Validated | Defined laboratory test completed successfully |
+| Partially Validated | Some verification criteria remain incomplete |
+| Gap Identified | Requirement or expected control not satisfied |
+
+Legal applicability and technical implementation are separate assessment dimensions.
+
+A successful laboratory validation does not automatically establish regulatory compliance.
+
+## 9. Document Governance
+
+The regulatory register will be reviewed when:
+
+- Relevant regulatory publications or amendments are identified.
+- The project scope changes.
+- New banking services or security zones are introduced.
+- Significant architecture decisions are approved.
+- New technical controls are implemented.
+- Validation or review identifies gaps.
+
+Changes will be recorded through Git version history.
+
+Major updates should include the reason for the change and the affected requirement IDs.
+
+## 10. Outstanding Review Items
+
+- Verify consolidated texts and amendment histories for REG-001 through REG-005.
+- Record exact applicable article and paragraph references.
+- Assess which obligations concern real regulated institutions versus what can be demonstrated in a fictional laboratory.
+- Determine whether a payment card data environment is within scope.
+- Determine whether a SWIFT-like financial messaging environment is within scope.
+- Develop detailed control mappings.
+- Establish evidence identifiers and validation methods.
+
+## 11. Next Deliverables
 
 1. Regulatory Applicability Assessment
 2. Detailed Regulatory Control Matrix
-3. Security Zone Architecture
-4. High-Level Design
-5. Low-Level Design
-6. Technical Validation Plan
+3. Business and Security Requirements Baseline
+4. Security Zone Architecture
+5. High-Level Design
+6. Low-Level Design
+7. Technical Validation Plan
 
-## 9. Disclaimer
+## 12. Disclaimer
 
-BANKLAB is a fictional, non-production banking infrastructure laboratory.
+BANKLAB is a fictional, isolated, and non-production banking infrastructure engineering laboratory.
 
-The project is not affiliated with any banking institution, regulatory authority or technology vendor.
+The project does not represent, reproduce, or disclose the internal architecture of any real bank.
 
-The documentation is intended for engineering education and technical research. It does not constitute legal advice, regulatory approval, independent audit certification or a declaration of compliance.
+Its regulatory references are used for educational analysis and engineering design.
 
-All regulatory interpretations will remain provisional until verified against the applicable official texts.
+This document does not constitute legal advice, independent audit evidence, regulatory approval, or a declaration of compliance.
+
+Any legal interpretation remains provisional until the relevant official provisions and their applicability have been verified.
